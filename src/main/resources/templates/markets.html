@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Markets List</title>
+</head>
+<body>
+<h2>Markets List</h2>
+<table border="1">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="market : ${markets}">
+    <td th:text="${market.id}">1</td>
+    <td th:text="${market.name}">Name</td>
+    <td>
+      <a th:href="@{'/showFormForUpdate/' + ${market.id}}">Edit</a> |
+      <a th:href="@{'/deleteMarket/' + ${market.id}}">Delete</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<a href="/showNewMarketForm">Add New Market</a>
+</body>
+</html>
