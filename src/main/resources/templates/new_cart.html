@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Add New Cart</title>
+</head>
+<body>
+<h2>Add New Cart</h2>
+<form action="#" th:action="@{'/{marketId}/saveCart'}" th:object="${cart}" method="post">
+  <div>
+    <button type="submit">Save</button>
+  </div>
+</form>
+<a th:href="@{'/{marketId}/carts'}">Back to Carts</a>
+</body>
+</html>

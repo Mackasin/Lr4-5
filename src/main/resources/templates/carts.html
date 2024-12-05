@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Carts List</title>
+</head>
+<body>
+<h2>Carts List for Market</h2>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="cart : ${carts}">
+        <td th:text="${cart.id}">1</td>
+        <td>
+            <a th:href="@{'/carts/' + ${cart.id} + '/products'}">View Products</a> |
+            <a th:href="@{'/deleteCart/' + ${cart.id}}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<!-- Кнопка для добавления новой корзины -->
+<form th:action="@{'/{marketId}/saveCart'(marketId=${marketId})}" method="post">
+    <button type="submit">Add New Cart</button>
+</form>
+
+<a href="/markets">Back to Markets</a>
+</body>
+</html>

@@ -19,7 +19,8 @@
     <td th:text="${market.name}">Name</td>
     <td>
       <a th:href="@{'/showFormForUpdate/' + ${market.id}}">Edit</a> |
-      <a th:href="@{'/deleteMarket/' + ${market.id}}">Delete</a>
+      <a th:href="@{'/deleteMarket/' + ${market.id}}">Delete</a> |
+      <a th:href="@{'/' + ${market.id} + '/carts'}">View Carts</a>
     </td>
   </tr>
   </tbody>
